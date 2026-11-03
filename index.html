@@ -637,7 +637,7 @@ const BAD=['fuck','shit','bitch','cunt','dick','cock','pussy','nigg','slut','who
 const profane=t=>{const l=t.toLowerCase().replace(/[@4]/g,'a').replace(/3/g,'e').replace(/[1!|]/g,'i').replace(/0/g,'o').replace(/[$5]/g,'s').replace(/[^a-z]/g,'');return BAD.some(w=>l.includes(w))};
 function applyName(){
   $('nameTxt').textContent='🏫 '+S.name+' Kindergarten';
-  $('dev').style.display=['kingducky','kingslime'].includes(S.name.trim().toLowerCase())?'block':'none';
+  $('dev').style.display=['Louwislol','Albertislol','Idk12345'].includes(S.name.trim().toLowerCase())?'block':'none';
   render();save();
 }
 function askName(){$('nameIn').value=S.name;$('modal').style.display='flex';$('nameIn').focus()}
