@@ -633,12 +633,19 @@ function applyLook(){
 }
 
 // ----- name + dev panel -----
-const BAD=['fuck','shit','bitch','cunt','dick','cock','pussy','nigg','slut','whore','nazi','hitler','porn','penis','vagina'];
+const BAD=['fuck','shit','bitch','cunt','dick','cock','pussy','nigg','slut','whore','nazi','hitler','porn','penis','vagina','gunoor'];
 const profane=t=>{const l=t.toLowerCase().replace(/[@4]/g,'a').replace(/3/g,'e').replace(/[1!|]/g,'i').replace(/0/g,'o').replace(/[$5]/g,'s').replace(/[^a-z]/g,'');return BAD.some(w=>l.includes(w))};
 function applyName(){
-  $('nameTxt').textContent='🏫 '+S.name+' Kindergarten';
-  $('dev').style.display=S.name.trim().toLowerCase()==='ilovegeese'?'block':'none';
-  render();save();
+  const isDev = S.name.trim().toLowerCase() === 'ilovegeese';
+
+  $('nameTxt').textContent = isDev
+    ? '🏫 ???'
+    : '🏫 ' + S.name + ' Kindergarten';
+
+  $('dev').style.display = isDev ? 'block' : 'none';
+
+  render();
+  save();
 }
 function askName(){$('nameIn').value=S.name;$('modal').style.display='flex';$('nameIn').focus()}
 $('nameOk').onclick=()=>{
